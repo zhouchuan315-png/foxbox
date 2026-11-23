@@ -1,0 +1,10 @@
+# 只对本项目生效：crates.io 走中科大镜像（实测 ~500KB/s，官方源 ~100KB/s）
+[source.crates-io]
+replace-with = "ustc"
+
+[source.ustc]
+registry = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
+
+[net]
+retry = 5
+git-fetch-with-cli = true

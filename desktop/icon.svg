@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- FoxBox 图标：一只几何狐狸头。深色底 + 一点暖橙，
+       和界面的"密、静"取向一致，缩小到 32px 也还认得出是只狐狸。 -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e2836" />
+      <stop offset="0.55" stop-color="#111720" />
+      <stop offset="1" stop-color="#080a0e" />
+    </linearGradient>
+    <linearGradient id="fur" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#ffa869" />
+      <stop offset="1" stop-color="#ee6a2f" />
+    </linearGradient>
+    <linearGradient id="snout" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#ffe4d1" />
+      <stop offset="1" stop-color="#ffc9a8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="232" fill="url(#bg)" />
+  <rect x="14" y="14" width="996" height="996" rx="222" fill="none" stroke="#2c3542" stroke-width="6" />
+
+  <!-- 耳朵 -->
+  <path d="M246 322 L286 168 Q292 150 308 160 L438 330 Z" fill="url(#fur)" />
+  <path d="M778 322 L738 168 Q732 150 716 160 L586 330 Z" fill="url(#fur)" />
+  <path d="M296 300 L318 216 L392 320 Z" fill="#8d3a17" opacity="0.55" />
+  <path d="M728 300 L706 216 L632 320 Z" fill="#8d3a17" opacity="0.55" />
+
+  <!-- 头部 -->
+  <path
+    d="M512 826 C 424 738 322 560 286 336 C 358 306 434 292 512 292 C 590 292 666 306 738 336 C 702 560 600 738 512 826 Z"
+    fill="url(#fur)"
+  />
+
+  <!-- 口鼻与眼睛 -->
+  <path d="M512 812 C 476 762 450 690 438 612 C 486 596 538 596 586 612 C 574 690 548 762 512 812 Z" fill="url(#snout)" />
+  <ellipse cx="418" cy="470" rx="30" ry="34" fill="#12161d" />
+  <ellipse cx="606" cy="470" rx="30" ry="34" fill="#12161d" />
+  <ellipse cx="428" cy="460" rx="9" ry="10" fill="#e7ecf3" opacity="0.85" />
+  <ellipse cx="616" cy="460" rx="9" ry="10" fill="#e7ecf3" opacity="0.85" />
+  <path d="M512 596 L482 640 Q512 660 542 640 Z" fill="#241a16" opacity="0.9" />
+</svg>

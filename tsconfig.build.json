@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "src",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "declaration": false,
+    "sourceMap": false,
+    "removeComments": false,
+    /* 源码里所有相对导入都写成 ./x.ts（tsx 直接跑需要），
+       编译时由 TS 自己改写成 ./x.js，不必再引打包器 */
+    "rewriteRelativeImportExtensions": true
+  },
+  "include": ["src/**/*.ts"]
+}

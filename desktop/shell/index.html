@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FoxBox</title>
+    <style>
+      /* 启动页：只做一件事——告诉用户"在启动"或者"为什么起不来"。
+         后端就绪后这个页面会被整体导航走，所以它必须足够轻。 */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background: radial-gradient(1200px 600px at 50% 0%, #141a23 0%, #0a0c10 70%);
+        color: #8c99aa;
+        font: 13px/1.6 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+        display: grid;
+        place-items: center;
+        user-select: none;
+      }
+      .box {
+        text-align: center;
+        max-width: 520px;
+        padding: 0 32px;
+      }
+      .mark {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 18px;
+        border-radius: 15px;
+        background: linear-gradient(150deg, #2a3441, #12161d);
+        border: 1px solid #2c3542;
+        color: #e7ecf3;
+        font: 600 26px/54px -apple-system, sans-serif;
+        letter-spacing: 1px;
+      }
+      .title {
+        color: #e7ecf3;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .status {
+        color: #5d6b7d;
+        font-size: 12.5px;
+        min-height: 40px;
+        /* 错误信息里带日志片段，换行要保留 */
+        white-space: pre-line;
+      }
+      .status.error {
+        color: #f85149;
+        text-align: left;
+        max-height: 46vh;
+        overflow: auto;
+        background: rgba(248, 81, 73, 0.08);
+        border: 1px solid rgba(248, 81, 73, 0.25);
+        border-radius: 8px;
+        padding: 10px 12px;
+        line-height: 1.65;
+      }
+      .bar {
+        margin: 16px auto 0;
+        width: 160px;
+        height: 2px;
+        border-radius: 2px;
+        background: #1b222c;
+        overflow: hidden;
+      }
+      .bar::after {
+        content: "";
+        display: block;
+        width: 40%;
+        height: 100%;
+        background: #4f8cff;
+        animation: slide 1.1s ease-in-out infinite;
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(350%);
+        }
+      }
+      .tip {
+        margin-top: 18px;
+        font-size: 11.5px;
+        color: #3f4a58;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="mark">F</div>
+      <div class="title">FoxBox</div>
+      <div class="status" id="status">正在启动本地服务…</div>
+      <div class="bar" id="bar"></div>
+      <div class="tip">首次启动可能要几十秒；服务就绪后这个窗口会自动进入工作台。</div>
+    </div>
+    <script>
+      // 壳里只调用这一个函数：把 Rust 侧的失败信息原样显示出来
+      window.foxboxFail = function (message) {
+        const status = document.getElementById('status');
+        status.className = 'status error';
+        status.textContent = message;
+        document.getElementById('bar').style.display = 'none';
+      };
+    </script>
+  </body>
+</html>

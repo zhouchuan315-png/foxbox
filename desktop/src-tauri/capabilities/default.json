@@ -1,0 +1,6 @@
+{
+  "identifier": "default",
+  "description": "主窗口只承载本地服务的页面，不使用任何 IPC 能力",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}

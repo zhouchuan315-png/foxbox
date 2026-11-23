@@ -1,0 +1,25 @@
+[package]
+name = "foxbox-desktop"
+version = "0.2.0"
+description = "FoxBox 桌面壳"
+edition = "2021"
+rust-version = "1.77"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+# 显式引 url：navigate() 要的就是它，比走 tauri 的 re-export 更明确
+url = "2"
+
+[features]
+# tauri build 会打开它，把资源打成自定义协议；dev 模式不需要
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = "symbols"

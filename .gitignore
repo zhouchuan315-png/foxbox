@@ -1,0 +1,28 @@
+node_modules/
+dist/
+desktop/src-tauri/target/
+desktop/src-tauri/gen/
+dist-electron/
+release/
+profiles/
+.foxbox/
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
+.env
+*.log
+.vite/
+coverage/
+.foxbox-m9-repair.json
+.foxbox-*-eval/
+.foxbox-ui-smoke/
+out/
+.foxbox-m11-eval/
+# 本地工作记录，不进版本库
+.workbuddy/
+# 本地产物/临时文件
+*.tmp
+*.pem
+*.p12
+.tmp-*

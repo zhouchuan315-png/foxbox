@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "FoxBox",
+  "version": "0.2.0",
+  "identifier": "dev.foxbox.desktop",
+  "build": {
+    "frontendDist": "../shell",
+    "beforeDevCommand": "npm --prefix .. run build",
+    "beforeBuildCommand": "npm --prefix .. run build"
+  },
+  "app": {
+    "windows": [],
+    "withGlobalTauri": false,
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app", "dmg"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "copyright": "FoxBox · 本地环境工作台",
+    "category": "DeveloperTool",
+    "shortDescription": "本地多环境浏览器工作台",
+    "longDescription": "本地优先的多环境浏览器工作台：一次固化指纹、定时任务、代理巡检与事件钩子。",
+    "macOS": {
+      "minimumSystemVersion": "11.0"
+    }
+  }
+}

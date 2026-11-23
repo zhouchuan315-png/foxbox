@@ -1,0 +1,53 @@
+{
+  "name": "foxbox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "本地优先的多环境浏览器工作台",
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "scripts": {
+    "fetch": "camoufox fetch",
+    "serve": "tsx src/main.ts",
+    "m0": "tsx scripts/m0-probe.ts",
+    "m0:headed": "tsx scripts/m0-probe.ts --headed",
+    "m1": "tsx scripts/m1-demo.ts",
+    "m1:headed": "tsx scripts/m1-demo.ts --headed",
+    "m2": "tsx scripts/m2-demo.ts",
+    "m3": "tsx scripts/m3-demo.ts",
+    "typecheck": "tsc --noEmit",
+    "m4": "tsx scripts/m4-demo.ts",
+    "m5": "tsx scripts/m5-demo.ts",
+    "build": "node scripts/build.mjs",
+    "start": "node dist/main.js",
+    "app": "tsx scripts/app.ts",
+    "desktop:dev": "cd desktop && npx tauri dev",
+    "desktop:build": "cd desktop && npx tauri build",
+    "restart-check": "tsx scripts/restart-check.ts",
+    "m6": "tsx scripts/m6-demo.ts",
+    "m7": "tsx scripts/m7-demo.ts",
+    "m8": "tsx scripts/m8-demo.ts",
+    "m9:repair": "tsx scripts/m9-probe-repair.ts",
+    "m9": "tsx scripts/m9-demo.ts",
+    "ui-smoke": "tsx scripts/ui-smoke.ts",
+    "m10": "tsx scripts/m10-automation.ts",
+    "bili": "tsx scripts/bilibili-collect.ts",
+    "m11": "tsx scripts/m11-identity.ts"
+  },
+  "dependencies": {
+    "camoufox": "0.5.9",
+    "fastify": "^5.12.8",
+    "playwright-core": "1.62.1",
+    "zod": "^4.6.7"
+  },
+  "overrides": {
+    "playwright-core": "1.62.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.6",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
